@@ -39,23 +39,6 @@ else{
 }
 $query->closeCursor();
 
-$dump_camera = "INSERT INTO `camera_img` (`img_id`, `user_id`, `img`, `img_filter`, `img_date`) VALUES
-(1, 1, 'web/img/5e54093974079.jpeg', 'none', '2020-02-24 18:34:49'),
-(2, 1, 'web/img/5e540cc44c983.jpeg', 'sydney', '2020-02-24 18:49:56'),
-(3, 1, 'web/img/5e540cd892777.jpeg', 'arctic', '2020-02-24 18:50:16'),
-(4, 1, 'web/img/5e540ced2742f.jpeg', 'texas', '2020-02-24 18:50:37'),
-(5, 1, 'web/img/5e540cfe88741.jpeg', 'none', '2020-02-24 18:50:54'),
-(6, 1, 'web/img/5e540d25a4d27.jpeg', 'paris', '2020-02-24 18:51:33');";
-
-$query = $pdo->prepare($dump_camera);
-if($query->execute()){
-    echo "Camera_img data inserted !<br>";
-}
-else{
-    echo "error<br>";
-}
-$query->closeCursor();
-
 /* Post_comment */
 
 $post_comment = "CREATE TABLE `post_comment` (
@@ -111,19 +94,6 @@ $user = "CREATE TABLE `users` (
 $query = $pdo->prepare($user);
 if($query->execute()){
     echo "User table created !<br>";
-}
-else{
-    echo "error<br>";
-}
-$query->closeCursor();
-
-$user_dump = "INSERT INTO `users` (`id`, `username`, `email`, `verified`, `token`, `password`, `log_date`, `notification`, `user_img`) VALUES
-(1, 'yanis', 'yanis.debbouza96@gmail.com', 1, '83eaea7c844bb479d80eb9e237a6797da8179f3beae205d2695fdd093bf0ccfc938d21cf68c62370f9f47e70ab3e63e20110', 
-'$2y$10\$rJfiO0UPmfRKU/eT07q68eWHyo/HzgC7Y/wMrl8BSdBUSDBJmRTwG', '2020-02-24 18:59:47', 1, 'web/user_img/laugh.gif');";
-
-$query = $pdo->prepare($user_dump);
-if($query->execute()){
-    echo "User yanis created !<br>";
 }
 else{
     echo "error<br>";
