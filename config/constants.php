@@ -8,8 +8,8 @@ define('DB_PASSWORD', 'qweqwe');
 
 /* Email */
 
-define('EMAIL', 'takeyourshootofficial@gmail.com');
-define('PASSWORD', 'Azerty321@');
+define('EMAIL', '');
+define('PASSWORD', '');
 
 /* Setup  */
 
